@@ -712,6 +712,18 @@
 		'BACK_ENTER_ADDRESS_TWO'   			=> 	'Enter Address two',
 		'BACK_ENTER_INFO_PASSWORD'   		=> 	'Minimum 6 Characters',
 	/*-------CUSTOMERS - Add Customer  End ------------*/
+
+
+        /*-------Role -Add Role  ---------------*/
+        'BACK_ADD_ROLE'   				=> 	'Add Role',
+        'BACK_ENTER_ROLE_NAME'   		=> 	'Enter Role Name',
+        'BACK_SLUG' 						=> 	'Slug',
+
+        'BACK_MANAGE_ROLE'   		=> 	'Manage Roles',
+        'BACK_EDIT_ROLE'   				=> 	'Edit Role',
+        /*-------CUSTOMERS - Add Role  End ------------*/
+
+
 	
 	/*-------CUSTOMERS - Manage Customer  ---------------*/
 		'BACK_MANAGE_CUSTOMERS'   			=> 	'Manage Customers',
