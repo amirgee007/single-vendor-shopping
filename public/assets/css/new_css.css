@@ -1,0 +1,82 @@
+/***************************************************************************************/
+.td_algnctr{ 
+	text-align:center !important;}
+.tbl_fnt th{ font-size:12px !important;}
+.aln_left{
+	display: flex;}
+.wllbg{ background-color:#fff;}	
+.wlbg_a1{color: black !important;
+    font-size: 14px;
+    font-weight: 600;
+	line-height:35px;}
+.wlbg_li2{ list-style:none; line-height:22px; padding-left: 20px;}	
+.wlbg_li1{ list-style:none; padding-left: 10px; }	
+.ctgry_h{
+	padding:25px;
+	text-align:center;}
+.usr_lst{
+	display: inline-block;
+    width: 100%;
+	margin-left:0px !important;}
+.slct_usr{
+	width: 100%;
+    padding:0;}		
+.optn_usr{
+	padding:8px 10px;
+	margin-left: 12px;
+    margin-top: 10px;}	
+.rdo_btn label{ margin-right:25px;}
+.rltd_pdct_tl a{
+	color:#d82672 ;}
+.rltd_pdct_tl { text-indent:0px !important;
+	text-align:center !important;}	
+.rltd_pdct_hd{ text-align:center !important;}
+.alert_box{ 
+	font-size: 20px;
+    margin-right: 30px;
+    margin-top: 50px;
+    padding: 30px;
+    color: red;
+    text-align: justify;
+    font-size: 16px;}
+.pdct_prclst .radio.inline+.radio.inline, .checkbox.inline+.checkbox.inline{ margin-left:0px !important;}	
+.pdct_prclst .price-filter  .inline + .inline{ margin-left:0px !important;}		
+.min_max_div{width: 100%;
+    height: auto;
+    padding: 20px 0px;
+    display: inline-block;}
+.spcfctn-more .col-lg-3{ width:20% !important; }	
+.add-expand .col-lg-3{ width:20% !important; }	
+#divspecificationTxt .void_one{width: 16.7% !important;	}
+.cntry_box{ 
+	
+	background-color: #ff8400;
+    color: #fff;
+    font-size: 16px;
+	border-radius: 0px 0px 4px 4px;
+	
+	}
+.cntry_box ul{
+	padding:12px 0px;
+	border:1px solid #ff8400;
+	 }		
+.cntry_box li{
+	list-style:none;
+	padding:0px 10px;}
+.cntry_box li:hover{ background-color:#fff;  color:#ff8400;}			
+	
+	.prdlist h4 {
+    padding: 5px;
+    width: 100%;
+    background: #f5f5f5;
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
