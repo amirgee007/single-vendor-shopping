@@ -91,7 +91,7 @@
                                           <div class="form-group">
                                              <label class="control-label col-lg-2" for="text1">@if (Lang::has(Session::get('admin_lang_file').'.BACK_NAME')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_NAME') }} @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_NAME') }} @endif<span class="text-sub">*</span></label>
                                              <div class="col-lg-8">
-                                                <input type="text" class="form-control" maxlength="50" placeholder="@if (Lang::has(Session::get('admin_lang_file').'.BACK_ENTER_ROLE_NAME')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_ENTER_ROLE_NAME') }}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_ENTER_ROLE_NAME') }} @endif" id="name" name="name" value="{!! Input::old('name') !!}">
+                                                <input required type="text" class="form-control" maxlength="50" placeholder="@if (Lang::has(Session::get('admin_lang_file').'.BACK_ENTER_ROLE_NAME')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_ENTER_ROLE_NAME') }}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_ENTER_ROLE_NAME') }} @endif" id="name" name="name" value="{!! Input::old('name') !!}">
                                                 <div id="name_error_msg"  style="color:#F00;font-weight:800"> </div>
                                              </div>
                                           </div>
