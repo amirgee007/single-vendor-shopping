@@ -14,21 +14,37 @@
             </div>
 
             <ul id="menu" class="collapse">
-                  <li <?php if($current_route == 'customer_dashboard'){ echo 'class="panel active"'; } else { echo 'class="panel"'; } ?> >
+
+                <li <?php if($current_route == 'customer_dashboard'){ echo 'class="panel active"'; } else { echo 'class="panel"'; } ?> >
                     <a href="{{ url('customer_dashboard') }}" >
                         <i class="icon-dashboard"></i>&nbsp; {{ (Lang::has(Session::get('admin_lang_file').'.BACK_DASHBOARD')!= '') ?  trans(Session::get('admin_lang_file').'.BACK_DASHBOARD')  : trans($ADMIN_OUR_LANGUAGE.'.BACK_DASHBOARD') }}</a>                   
                 </li>
-                   <li <?php if($current_route == 'add_customer'){ echo 'class="panel active"'; } else { echo 'class="panel"'; } ?> >
+
+                <li <?php if($current_route == 'add_customer'){ echo 'class="panel active"'; } else { echo 'class="panel"'; } ?> >
                     <a href="{{ url('add_customer') }}" >
                         <i class="icon-user"></i>&nbsp;{{ (Lang::has(Session::get('admin_lang_file').'.BACK_ADD_CUSTOMER')!= '') ? trans(Session::get('admin_lang_file').'.BACK_ADD_CUSTOMER'): trans($ADMIN_OUR_LANGUAGE.'.BACK_ADD_CUSTOMER') }}
 	                </a>                   
                 </li>
+
                  <li  <?php if($current_route == 'manage_customer'){ echo 'class="panel active"'; } else { echo 'class="panel"'; } ?>>
                     <a href="{{ url('manage_customer') }}" >
                         <i class="icon-ok-sign"></i>&nbsp;{{ (Lang::has(Session::get('admin_lang_file').'.BACK_MANAGE_CUSTOMERS')!= '') ?  trans(Session::get('admin_lang_file').'.BACK_MANAGE_CUSTOMERS'): trans($ADMIN_OUR_LANGUAGE.'.BACK_MANAGE_CUSTOMERS')}}
                    </a>                   
                 </li>
-				 <li <?php if($current_route == 'manage_inquires'){ echo 'class="panel active"'; } else { echo 'class="panel"'; } ?>>
+
+                <li <?php if($current_route == 'add_role'){ echo 'class="panel active"'; } else { echo 'class="panel"'; } ?> >
+                    <a href="{{ url('add_role') }}" >
+                        <i class="icon-upload"></i>&nbsp;{{ (Lang::has(Session::get('admin_lang_file').'.BACK_ADD_ROLE')!= '') ? trans(Session::get('admin_lang_file').'.BACK_ADD_ROLE'): trans($ADMIN_OUR_LANGUAGE.'.BACK_ADD_ROLE') }}
+                    </a>
+                </li>
+
+                <li  <?php if($current_route == 'manage_role'){ echo 'class="panel active"'; } else { echo 'class="panel"'; } ?>>
+                    <a href="{{ url('manage_role') }}" >
+                        <i class="icon-ok-sign"></i>&nbsp;{{ (Lang::has(Session::get('admin_lang_file').'.BACK_MANAGE_ROLE')!= '') ?  trans(Session::get('admin_lang_file').'.BACK_MANAGE_ROLE'): trans($ADMIN_OUR_LANGUAGE.'.BACK_MANAGE_ROLE')}}
+                    </a>
+                </li>
+
+                <li <?php if($current_route == 'manage_inquires'){ echo 'class="panel active"'; } else { echo 'class="panel"'; } ?>>
                     <a href="{{ url('manage_inquires')}}" >
                         <i class="icon-user-md"></i>&nbsp;{{ (Lang::has(Session::get('admin_lang_file').'.BACK_MANAGE_INQUIRIES')!= '') ?  trans(Session::get('admin_lang_file').'.BACK_MANAGE_INQUIRIES'): trans($ADMIN_OUR_LANGUAGE.'.BACK_MANAGE_INQUIRIES')}} 
                    </a>                   

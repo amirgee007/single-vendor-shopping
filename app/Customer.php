@@ -281,6 +281,11 @@ class Customer extends Model
         return DB::table('nm_enquiry')->update($admin_enq);
     }
 
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'role_id' ,'role_id');
+    }
+
     
 }
 

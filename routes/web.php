@@ -479,6 +479,17 @@ Route::get('mer_product_getmerchantshop','ProductController@mer_product_getmerch
 Route::get('product_dashboard', 'ProductController@product_dashboard');
 Route::get('block_product_multiple', 'ProductController@block_product_multiple');
 Route::get('unblock_product_multiple', 'ProductController@unblock_product_multiple');
+//admin->Role->add Role
+Route::get('add_role','AdminRoleController@add_role');
+Route::post('add_role_submit','AdminRoleController@add_role_submit');
+
+Route::post('edit_role_submit','AdminRoleController@edit_role_submit');
+Route::get('edit_role/{id}','AdminRoleController@edit_role');
+Route::get('delete_role/{id}','AdminRoleController@delete_role');
+
+Route::get('manage_role','AdminRoleController@manage_role');
+
+
 //admin->customer->add customer
 Route::get('add_customer','CustomerController@add_customer');
 Route::get('load_getcity','CustomerController@getcity');
