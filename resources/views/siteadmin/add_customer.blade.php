@@ -105,6 +105,23 @@
                                              </div>
                                           </div>
                                        </div>
+
+                                       <div class="panel-body">
+                                          <div class="form-group">
+                                             <label class="control-label col-lg-2" for="text1">@if (Lang::has(Session::get('admin_lang_file').'.SELECT_ROLE')!= '') {{  trans(Session::get('admin_lang_file').'.SELECT_ROLE') }} @else {{ trans($ADMIN_OUR_LANGUAGE.'.SELECT_ROLE') }} @endif<span class="text-sub">*</span></label>
+                                             <div class="col-lg-4">
+                                                <select required class="form-control" name="select_role" id="select_role" value="{!! Input::old('select_role') !!}" >
+                                                   <option value="">-- @if (Lang::has(Session::get('admin_lang_file').'.SELECT_ROLE')!= '') {{ trans(Session::get('admin_lang_file').'.SELECT_ROLE') }}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.SELECT_ROLE') }} @endif --</option>
+
+                                                   @foreach($roles as $role)
+                                                      <option value="{{$role->role_id}}" <?php if(Input::old('select_role')==$role->role_id){ echo "selected";}?>>{{$role->name}}</option>
+                                                   @endforeach
+                                                </select>
+                                                <div id="select_role"  style="color:#F00;font-weight:800"> </div>
+                                             </div>
+                                          </div>
+                                       </div>
+
                                        <input type="hidden" name="exist" id="exist" value="">
                                        <div class="panel-body">
                                           <div class="form-group">
@@ -164,6 +181,7 @@
                                              </div>
                                           </div>
                                        </div>
+
                                        <div class="panel-body">
                                           <div class="form-group">
                                              <label class="control-label col-lg-2" for="text1">@if (Lang::has(Session::get('admin_lang_file').'.BACK_SELECT_CITY')!= '') {{ trans(Session::get('admin_lang_file').'.BACK_SELECT_CITY') }} @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_SELECT_CITY') }} @endif<span class="text-sub">*</span></label>

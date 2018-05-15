@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Role;
 use DB;
 use Session;
 use App\Http\Models;
@@ -79,7 +80,9 @@ class CustomerController extends Controller
             $adminleftmenus = view('siteadmin.includes.admin_left_menu_customer');
             $adminfooter    = view('siteadmin.includes.admin_footer');
             $countryresult  = Customer::get_country();
-            return view('siteadmin.add_customer')->with('adminheader', $adminheader)->with('adminleftmenus', $adminleftmenus)->with('adminfooter', $adminfooter)->with('countryresult', $countryresult);
+            $roles = Role::all();
+
+            return view('siteadmin.add_customer' ,compact('roles'))->with('adminheader', $adminheader)->with('adminleftmenus', $adminleftmenus)->with('adminfooter', $adminfooter)->with('countryresult', $countryresult);
         } else {
             return Redirect::to('siteadmin');
         }
@@ -101,7 +104,8 @@ class CustomerController extends Controller
             $adminfooter    = view('siteadmin.includes.admin_footer');
             $countryresult  = Customer::get_all_country();
             $customerresult = Customer::get_customer($id);
-            return view('siteadmin.edit_customer')->with('adminheader', $adminheader)->with('adminleftmenus', $adminleftmenus)->with('adminfooter', $adminfooter)->with('countryresult', $countryresult)->with('customerresult', $customerresult);
+            $roles = Role::all();
+            return view('siteadmin.edit_customer' ,compact('roles'))->with('adminheader', $adminheader)->with('adminleftmenus', $adminleftmenus)->with('adminfooter', $adminfooter)->with('countryresult', $countryresult)->with('customerresult', $customerresult);
         } else {
             return Redirect::to('siteadmin');
         }
@@ -308,6 +312,7 @@ class CustomerController extends Controller
                         
                         'cus_name'     => Input::get('customer_first_name'),
                         'cus_email'    => Input::get('customer_Email'),
+                        'role_id'    => Input::get('select_role'),
                         'cus_pwd'      => $mdpwd,
                         'cus_phone'    => Input::get('customer_phone'),
                         'cus_address1' => Input::get('customer_address1'),
@@ -417,7 +422,9 @@ class CustomerController extends Controller
                         'cus_address1' => Input::get('customer_address1'),
                         'cus_address2' => Input::get('customer_address2'),
                         'cus_country' => Input::get('select_customer_country'),
-                        'cus_city' => Input::get('select_customer_city')
+                        'cus_city' => Input::get('select_customer_city'),
+                        'role_id'    => Input::get('select_role'),
+
                     );
                     
                     

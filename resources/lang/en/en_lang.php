@@ -111,6 +111,8 @@
 		'NEW_PASSWORD' => 'New Password',
 		'CONFIRM_PASSWORD' => 'Confirm Password',
 		'SELECT_COUNTRY' => 'Select Country',
+        'ROLE'   				=> 	'Role',
+        'SELECT_ROLE'   				=> 	'Select Role',
 		'SELECT_CITY' => 'Select City',
 		'BY_CLICKING_SIGN_UP_YOU_AGREE_TO' => 'By clicking Sign Up you agree to',
 		'TERMS_AND_CONDITIONS' => 'Terms and conditions',

@@ -68,7 +68,20 @@
                         <input type="password" minlength="6" maxlength="75" id="cus_pwd" name="pwd" placeholder="<?php if (Lang::has(Session::get('lang_file').'.ENTER_YOUR_PASSWORD')!= '') { echo  trans(Session::get('lang_file').'.ENTER_YOUR_PASSWORD');}  else { echo trans($OUR_LANGUAGE.'.ENTER_YOUR_PASSWORD');} ?> (<?php if (Lang::has(Session::get('lang_file').'.MIMIMUM_6_CHARACTERS')!= '') { echo  trans(Session::get('lang_file').'.MIMIMUM_6_CHARACTERS');}  else { echo trans($OUR_LANGUAGE.'.MIMIMUM_6_CHARACTERS');} ?>)" class="form-control span5" value="{!! Input::old('pwd') !!}" required/>
                         @if ($errors->has('pwd')) 
                         <p class="error-block" style="color:red;">{{ $errors->first('pwd') }}</p>
-                        @endif 
+                        @endif
+
+                         <label for="text1" >@if (Lang::has(Session::get('lang_file').'.ROLE')!= '') {{  trans(Session::get('lang_file').'.ROLE') }} @else {{ trans($OUR_LANGUAGE.'.ROLE') }} @endif:<span class="text-sub" >*</span></label>
+                         <select class="span5" name="select_role" id="select_role" required>
+                             <option value="">-- <?php if (Lang::has(Session::get('lang_file').'.SELECT_ROLE')!= '') { echo  trans(Session::get('lang_file').'.SELECT_ROLE');}  else { echo trans($OUR_LANGUAGE.'.SELECT_ROLE');} ?>--</option>
+                             @foreach($roles as $role)
+                             <option value="{{$role->role_id}}" <?php if(Input::old('select_role')==$role->role_id){ echo "selected";}?>>{{$role->name}}</option>
+                             @endforeach
+                         </select>
+                         @if ($errors->has('select_role'))
+                             <p class="error-block" style="color:red;">{{ $errors->first('select_role') }}</p>
+                         @endif
+
+
                         <label for="text1" >@if (Lang::has(Session::get('lang_file').'.COUNTRY')!= '') {{  trans(Session::get('lang_file').'.COUNTRY') }} @else {{ trans($OUR_LANGUAGE.'.COUNTRY') }} @endif:<span class="text-sub" >*</span></label>
                         <select class="span5" name="select_country" id="select_country" onChange="get_city_list1(this.value)" required>
                            <option value="">-- <?php if (Lang::has(Session::get('lang_file').'.SELECT_COUNTRY')!= '') { echo  trans(Session::get('lang_file').'.SELECT_COUNTRY');}  else { echo trans($OUR_LANGUAGE.'.SELECT_COUNTRY');} ?>--</option>

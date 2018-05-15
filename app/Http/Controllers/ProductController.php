@@ -554,6 +554,11 @@ class ProductController extends Controller
 				}				
 				$Original_Price = Input::get('Original_Price');            
 				$Discounted_Price = Input::get('Discounted_Price');
+				$retail_sale_price = Input::get('retail_sale_price');
+				$wholesale_price = Input::get('wholesale_price');
+				$stock_quantity = Input::get('stock_quantity');
+
+
 /* calculate product discount percentage */
 				$product_saving_price        = Input::get('Original_Price') - Input::get('Discounted_Price');
             
@@ -633,6 +638,10 @@ class ProductController extends Controller
                     
                     'pro_disprice' => $Discounted_Price,
 
+                    'retail_sale_price' => $retail_sale_price,
+                    'wholesale_price' => $wholesale_price,
+                    'stock_quantity' => $stock_quantity,
+
                     'pro_discount_percentage' => $Product_discount_percentage,
                     
                     'pro_inctax' => $inc_tax,
@@ -656,8 +665,6 @@ class ProductController extends Controller
                     'pro_Img' => $file_name_insert,
                     
                     'pro_image_count' => $img_count,
-                    
-                    'pro_qty' => $pquantity,
 
                     'cash_pack' => $cash_pack,
                     
@@ -1445,6 +1452,10 @@ class ProductController extends Controller
                 'pro_price' => $Original_Price,
                 
                 'pro_disprice' => $Discounted_Price,
+
+                'retail_sale_price' => Input::get('retail_sale_price'),
+                'wholesale_price' => Input::get('wholesale_price'),
+                'stock_quantity' => Input::get('stock_quantity'),
 
                 'pro_discount_percentage' => $Product_discount_percentage,
                 

@@ -11,7 +11,12 @@ class Products extends Model
     
     protected $guarded = array('id');
     protected $table = 'nm_product';
-    
+
+
+    public  function getPriceAttribute(){
+//        $this->attributes[''];
+    }
+
     public static function insert_product($entry)
     {
        $check_insert = DB::table('nm_product')->insert($entry);

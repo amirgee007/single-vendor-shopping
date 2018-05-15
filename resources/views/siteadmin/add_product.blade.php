@@ -206,7 +206,7 @@
                     </div>
                 </div>
 brand*/ ?>
- 		 <div class="form-group">
+ 		        <div class="form-group">
                     <label for="text1" class="control-label col-lg-2">@if (Lang::has(Session::get('admin_lang_file').'.BACK_PRODUCT_QUANTITY')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_PRODUCT_QUANTITY') }}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_PRODUCT_QUANTITY') }} @endif<span class="text-sub">*</span></label>
 
                     <div class="col-lg-8">
@@ -223,14 +223,43 @@ brand*/ ?>
 						<div id="org_price_error_msg"  style="color:#F00;font-weight:800"> </div>
 					</div>
                 </div>
-				  <div class="form-group">
-                    <label for="text1" class="control-label col-lg-2">@if (Lang::has(Session::get('admin_lang_file').'.BACK_DISCOUNTED_PRICE')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_DISCOUNTED_PRICE')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_DISCOUNTED_PRICE')}} @endif ({{ Helper::cur_sym() }})<span class="text-sub">*</span></label>
 
+
+                <div class="form-group">
+                    <label for="text1" class="control-label col-lg-2">@if (Lang::has(Session::get('admin_lang_file').'.BACK_DISCOUNTED_PRICE')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_DISCOUNTED_PRICE')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_DISCOUNTED_PRICE')}} @endif ({{ Helper::cur_sym() }})<span class="text-sub">*</span></label>
                     <div class="col-lg-8">
                         <input placeholder="@if (Lang::has(Session::get('admin_lang_file').'.BACK_NUMBERS_ONLY')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_NUMBERS_ONLY')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_NUMBERS_ONLY')}} @endif" class="form-control" value="{{ old('Discounted_Price') }}" type="text" id="Discounted_Price" name="Discounted_Price" maxlength="10">
-						<div id="dis_price_error_msg"  style="color:#F00;font-weight:800"> </div>
+                        <div id="dis_price_error_msg"  style="color:#F00;font-weight:800"> </div>
                     </div>
                 </div>
+
+            {{--new fields--}}
+            <div class="form-group">
+                <label for="retail_sale_price" class="control-label col-lg-2">@if (Lang::has(Session::get('admin_lang_file').'.BACK_RETAIL_PRICE')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_RETAIL_PRICE')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_RETAIL_PRICE')}} @endif ({{ Helper::cur_sym() }})<span class="text-sub">*</span></label>
+                <div class="col-lg-8">
+                    <input required placeholder="@if (Lang::has(Session::get('admin_lang_file').'.BACK_NUMBERS_ONLY')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_NUMBERS_ONLY')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_NUMBERS_ONLY')}} @endif" class="form-control" value="{{ old('retail_sale_price') }}" type="text" id="retail_sale_price" name="retail_sale_price" maxlength="10">
+                    <div id="retail_sale_price"  style="color:#F00;font-weight:800"> </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="wholesale_price" class="control-label col-lg-2">@if (Lang::has(Session::get('admin_lang_file').'.BACK_WHOLESALE_PRICE')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_WHOLESALE_PRICE')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_WHOLESALE_PRICE')}} @endif ({{ Helper::cur_sym() }})<span class="text-sub">*</span></label>
+                <div class="col-lg-8">
+                    <input required placeholder="@if (Lang::has(Session::get('admin_lang_file').'.BACK_NUMBERS_ONLY')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_NUMBERS_ONLY')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_NUMBERS_ONLY')}} @endif" class="form-control" value="{{ old('wholesale_price') }}" type="text" id="wholesale_price" name="wholesale_price" maxlength="10">
+                    <div id="wholesale_price"  style="color:#F00;font-weight:800"> </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="text1" class="control-label col-lg-2">@if (Lang::has(Session::get('admin_lang_file').'.BACK_STOCK_QUANTITY')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_STOCK_QUANTITY')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_STOCK_QUANTITY')}} @endif ({{ Helper::cur_sym() }})<span class="text-sub">*</span></label>
+                <div class="col-lg-8">
+                    <input required placeholder="@if (Lang::has(Session::get('admin_lang_file').'.BACK_NUMBERS_ONLY')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_NUMBERS_ONLY')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_NUMBERS_ONLY')}} @endif" class="form-control" value="{{ old('stock_quantity') }}" type="text" id="stock_quantity" name="stock_quantity" maxlength="10">
+                    <div id="stock_quantity"  style="color:#F00;font-weight:800"> </div>
+                </div>
+            </div>
+            {{--new fields--}}
+
+
 				 <div class="form-group">
                     <label for="text1" class="control-label col-lg-2"><span class="text-sub"></span></label>
 
@@ -240,17 +269,24 @@ brand*/ ?>
 								<div id="tax_error_msg"  style="color:#F00;font-weight:800"> </div>			
                     </div>
                 </div>
-		<div class="form-group"  >
-                    <label for="text2"  class="control-label col-lg-2">@if (Lang::has(Session::get('admin_lang_file').'.BACK_SHIPPING_AMOUNT')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_SHIPPING_AMOUNT')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_SHIPPING_AMOUNT')}} @endif <span class="text-sub">*</span></label>
+            <div class="form-group">
+                <label for="text2"
+                       class="control-label col-lg-2">@if (Lang::has(Session::get('admin_lang_file').'.BACK_SHIPPING_AMOUNT')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_SHIPPING_AMOUNT')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_SHIPPING_AMOUNT')}} @endif
+                    <span class="text-sub">*</span></label>
 
-                   <div class="col-lg-8">
- <label class="sample"><input type="radio" id="shipamt" name="shipamt" onClick="setshipVisibility('showship', 'none');" value="1" checked > @if (Lang::has(Session::get('admin_lang_file').'.BACK_FREE')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_FREE')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_FREE')}} @endif</label>
-<label class="sample"><input type="radio" id="shipamt" name="shipamt" onClick="setshipVisibility('showship', 'block');" value="2"  > @if (Lang::has(Session::get('admin_lang_file').'.BACK_AMOUNT')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_AMOUNT')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_AMOUNT')}} @endif</label>
+                <div class="col-lg-8">
+                    <label class="sample"><input type="radio" id="shipamt" name="shipamt"
+                                                 onClick="setshipVisibility('showship', 'none');" value="1"
+                                                 checked> @if (Lang::has(Session::get('admin_lang_file').'.BACK_FREE')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_FREE')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_FREE')}} @endif
+                    </label>
+                    <label class="sample"><input type="radio" id="shipamt" name="shipamt"
+                                                 onClick="setshipVisibility('showship', 'block');"
+                                                 value="2"> @if (Lang::has(Session::get('admin_lang_file').'.BACK_AMOUNT')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_AMOUNT')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_AMOUNT')}} @endif
+                    </label>
 
-					
-						<label class="sample"></label>
-                    </div>
+                    <label class="sample"></label>
                 </div>
+            </div>
 		
 				  <div class="form-group" id="showship" style="display:none;">
                     <label for="text1" class="control-label col-lg-2">@if (Lang::has(Session::get('admin_lang_file').'.BACK_SHIPPING_AMOUNT')!= '') {{ trans(Session::get('admin_lang_file').'.BACK_SHIPPING_AMOUNT')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_SHIPPING_AMOUNT')}} @endif ({{ Helper::cur_sym() }})<span class="text-sub">*</span></label>

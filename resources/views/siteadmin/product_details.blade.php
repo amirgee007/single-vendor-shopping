@@ -169,6 +169,34 @@
                                              </div>
                                           </div>
                                        </div>
+
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-2" for="text1"> Retail Sale Price<span class="text-sub">*</span></label>
+                                                <div class="col-lg-4">
+                                                    {{ Helper::cur_sym() }} {{ $products->retail_sale_price }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-2" for="text1"> Wholesales Price<span class="text-sub">*</span></label>
+                                                <div class="col-lg-4">
+                                                    {{ Helper::cur_sym() }} {{ $products-> wholesale_price }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-2" for="text1"> Stock Quantity<span class="text-sub">*</span></label>
+                                                <div class="col-lg-4">
+                                                     {{ $products->stock_quantity }}
+                                                </div>
+                                            </div>
+                                        </div>
+
                                        <div class="panel-body">
                                           <div class="form-group">
                                              <label class="control-label col-lg-2" for="text1">Tax Percentage</label>

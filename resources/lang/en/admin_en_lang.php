@@ -716,11 +716,19 @@
 
         /*-------Role -Add Role  ---------------*/
         'BACK_ADD_ROLE'   				=> 	'Add Role',
+        'ROLE'   				=> 	'Role',
+        'SELECT_ROLE'   				=> 	'Select Role',
         'BACK_ENTER_ROLE_NAME'   		=> 	'Enter Role Name',
         'BACK_SLUG' 						=> 	'Slug',
 
         'BACK_MANAGE_ROLE'   		=> 	'Manage Roles',
         'BACK_EDIT_ROLE'   				=> 	'Edit Role',
+
+        'BACK_RETAIL_PRICE'   				=> 	'Retail Sale Price',
+        'BACK_WHOLESALE_PRICE'   				=> 	'Whole Sale Price',
+        'BACK_STOCK_QUANTITY'   				=> 	'Stock Quantity',
+
+
         /*-------CUSTOMERS - Add Role  End ------------*/
 
 

@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Role;
 use DB;
 use Session;
 use Helper;
@@ -4137,7 +4138,8 @@ class HomeController extends Controller
 	    $header         = view('includes.header')->with('header_category', $header_category)->with('logodetails', $getlogodetails);
         $footer         = view('includes.footer')->with('cms_page_title', $cms_page_title)->with('get_social_media_url', $get_social_media_url)->with('get_contact_det', $get_contact_det)->with('getanl', $getanl);
         $country_return = AdminModel::get_country_detail();
-        
+        $roles = Role::all();
+
 		
 		 if (Session::has('customerid')) {
 			 
@@ -4146,7 +4148,7 @@ class HomeController extends Controller
 		
 		 } else { 
        
-        return view('register')->with('navbar', $navbar)->with('header', $header)->with('footer', $footer)->with('header_category', $header_category)->with('get_product_details_by_cat', $get_product_details_by_cat)->with('most_visited_product', $most_visited_product)->with('category_count', $category_count)->with('get_product_details_typeahed', $get_product_details_typeahed)->with('main_category', $main_category)->with('sub_main_category', $sub_main_category)->with('second_main_category', $second_main_category)->with('second_sub_main_category', $second_sub_main_category)->with('country_details', $country_return)->with('metadetails', $getmetadetails)->with('get_contact_det', $get_contact_det)->with('general',$general);
+        return view('register',compact('roles'))->with('navbar', $navbar)->with('header', $header)->with('footer', $footer)->with('header_category', $header_category)->with('get_product_details_by_cat', $get_product_details_by_cat)->with('most_visited_product', $most_visited_product)->with('category_count', $category_count)->with('get_product_details_typeahed', $get_product_details_typeahed)->with('main_category', $main_category)->with('sub_main_category', $sub_main_category)->with('second_main_category', $second_main_category)->with('second_sub_main_category', $second_sub_main_category)->with('country_details', $country_return)->with('metadetails', $getmetadetails)->with('get_contact_det', $get_contact_det)->with('general',$general);
 		
 		 }
 		
@@ -4180,6 +4182,7 @@ class HomeController extends Controller
             $cus_phone = Input::get('mobile');
             $pwd       = md5($cpwd);
             $city = Input::get('select_city');
+            $role_id = Input::get('select_role');
             $country = Input::get('select_country');
             
             $this->validate($request, 
@@ -4214,6 +4217,7 @@ class HomeController extends Controller
             $entry = array(
                 'cus_name' => Input::get('customername'),
                 'cus_email' => Input::get('email'),
+                'role_id' => $role_id,
                 'cus_pwd' => $pwd,
                 'cus_phone' => Input::get('mobile'),
                 'cus_country' => Input::get('select_country'),

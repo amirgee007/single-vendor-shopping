@@ -110,6 +110,21 @@
                                        <input type="hidden" name="exist" id="exist" value="">
                                        <div class="panel-body">
                                           <div class="form-group">
+                                             <label class="control-label col-lg-2" for="text1">@if (Lang::has(Session::get('admin_lang_file').'.SELECT_ROLE')!= '') {{  trans(Session::get('admin_lang_file').'.SELECT_ROLE') }} @else {{ trans($ADMIN_OUR_LANGUAGE.'.SELECT_ROLE') }} @endif<span class="text-sub">*</span></label>
+                                             <div class="col-lg-4">
+                                                <select required class="form-control" name="select_role" id="select_role" value="{!! Input::old('select_role') !!}" >
+                                                   <option value="">-- @if (Lang::has(Session::get('admin_lang_file').'.SELECT_ROLE')!= '') {{ trans(Session::get('admin_lang_file').'.SELECT_ROLE') }}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.SELECT_ROLE') }} @endif --</option>
+
+                                                   @foreach($roles as $role)
+                                                      <option value="{{$role->role_id}}" <?php if($customer->role_id==$role->role_id){ echo "selected";}?>>{{$role->name}}</option>
+                                                   @endforeach
+                                                </select>
+                                                <div id="select_role"  style="color:#F00;font-weight:800"> </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="panel-body">
+                                          <div class="form-group">
                                              <label class="control-label col-lg-2" for="text1">@if (Lang::has(Session::get('admin_lang_file').'.BACK_PHONE')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_PHONE') }} @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_PHONE') }} @endif<span class="text-sub">*</span></label>
                                              <div class="col-lg-4">
                                                 <input type="text" class="form-control" maxlength="16" placeholder="" id="customer_phone"  value="{{ $customer->cus_phone }}"  name="customer_phone" required>
