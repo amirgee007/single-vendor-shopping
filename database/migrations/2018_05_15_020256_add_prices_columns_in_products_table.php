@@ -16,7 +16,7 @@ class AddPricesColumnsInProductsTable extends Migration
         Schema::table('nm_product', function (Blueprint $table) {
             $table->float('retail_sale_price')->after('product_brand_id');
             $table->float('wholesale_price')->after('product_brand_id');
-            $table->float('stock_quantity')->after('product_brand_id');
+            $table->integer('stock_quantity')->after('product_brand_id');
 
         });
     }

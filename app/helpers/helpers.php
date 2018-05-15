@@ -32,12 +32,29 @@ class Helper {
 	}
 
     public static function get_role_price($pro_id){
+        $product = \App\Products::where('pro_id' ,$pro_id)->first();
 
 	    if(\Auth::check()){
+            $user =  \Auth::user();
 
-	        $product = \App\Products::where('pro_id' ,$pro_id)->first();
-            $product = 0;
+            if($user->role->name= "Retail") {
+               $price = $product->retail_sale_price;
+           }
+
+           else if($user->role->name= "Whole Sale"){
+               $price = $product->wholesale_price;
+           }
+
+           else{
+               $price = $product->pro_disprice;
+           }
         }
+
+        else{
+            $price = $product->pro_disprice;
+        }
+
+        return $price;
 
     }
 
