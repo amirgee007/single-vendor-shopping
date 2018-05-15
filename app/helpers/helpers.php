@@ -31,6 +31,16 @@ class Helper {
 		echo $lang_name = 'French'; 
 	}
 
+    public static function get_role_price($pro_id){
+
+	    if(\Auth::check()){
+
+	        $product = \App\Products::where('pro_id' ,$pro_id)->first();
+            $product = 0;
+        }
+
+    }
+
 }
 
 ?>
