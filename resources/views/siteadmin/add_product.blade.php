@@ -234,13 +234,6 @@ brand*/ ?>
                 </div>
 
             {{--new fields--}}
-            <div class="form-group">
-                <label for="retail_sale_price" class="control-label col-lg-2">@if (Lang::has(Session::get('admin_lang_file').'.BACK_RETAIL_PRICE')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_RETAIL_PRICE')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_RETAIL_PRICE')}} @endif ({{ Helper::cur_sym() }})<span class="text-sub">*</span></label>
-                <div class="col-lg-8">
-                    <input required placeholder="@if (Lang::has(Session::get('admin_lang_file').'.BACK_NUMBERS_ONLY')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_NUMBERS_ONLY')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_NUMBERS_ONLY')}} @endif" class="form-control" value="{{ old('retail_sale_price') }}" type="text" id="retail_sale_price" name="retail_sale_price" maxlength="10">
-                    <div id="retail_sale_price"  style="color:#F00;font-weight:800"> </div>
-                </div>
-            </div>
 
             <div class="form-group">
                 <label for="wholesale_price" class="control-label col-lg-2">@if (Lang::has(Session::get('admin_lang_file').'.BACK_WHOLESALE_PRICE')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_WHOLESALE_PRICE')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_WHOLESALE_PRICE')}} @endif ({{ Helper::cur_sym() }})<span class="text-sub">*</span></label>

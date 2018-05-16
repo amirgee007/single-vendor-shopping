@@ -554,7 +554,6 @@ class ProductController extends Controller
 				}				
 				$Original_Price = Input::get('Original_Price');            
 				$Discounted_Price = Input::get('Discounted_Price');
-				$retail_sale_price = Input::get('retail_sale_price');
 				$wholesale_price = Input::get('wholesale_price');
 				$stock_quantity = Input::get('stock_quantity');
 
@@ -638,7 +637,6 @@ class ProductController extends Controller
                     
                     'pro_disprice' => $Discounted_Price,
 
-                    'retail_sale_price' => $retail_sale_price,
                     'wholesale_price' => $wholesale_price,
                     'stock_quantity' => $stock_quantity,
 

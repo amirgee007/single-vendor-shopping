@@ -117,7 +117,7 @@
                                  <div class="form-group">
                                     <label for="text1" class="control-label col-lg-2">@if (Lang::has(Session::get('lang_file').'.ADDRESS_LINE2')!= '') {{  trans(Session::get('lang_file').'.ADDRESS_LINE2') }} @else {{ trans($OUR_LANGUAGE.'.ADDRESS_LINE2') }} @endif<span class="text-sub">*</span></label>
                                     <div class="col-lg-8">
-                                       <input type="text" id="addr1_line" name="addr1_line" placeholder="@if (Lang::has(Session::get('lang_file').'.ENTER_YOUR_ADDRESS_LINE2')!= '') {{  trans(Session::get('lang_file').'.ENTER_YOUR_ADDRESS_LINE2') }}  @else {{ trans($OUR_LANGUAGE.'.ENTER_YOUR_ADDRESS_LINE2') }} @endif"  class="form-control span" maxlength="90" value="{!! Input::old('addr1_line') !!}" required>
+                                       <input type="text" id="addr1_line" name="addr1_line" placeholder="@if (Lang::has(Session::get('lang_file').'.ENTER_YOUR_ADDRESS_LINE2')!= '') {{  trans(Session::get('lang_file').'.ENTER_YOUR_ADDRESS_LINE2') }}  @else {{ trans($OUR_LANGUAGE.'.ENTER_YOUR_ADDRESS_LINE2') }} @endif"  class="form-control span" maxlength="90" value="{!! Input::old('addr1_line') !!}">
                                        @if ($errors->has('addr1_line')) 
                                        <p class="error-block" style="color:red;">@if (Lang::has(Session::get('lang_file').'.ADDRESS_FIELD_IS_REQUIRED')!= '') {{  trans(Session::get('lang_file').'.ADDRESS_FIELD_IS_REQUIRED') }} @else {{ trans($OUR_LANGUAGE.'.ADDRESS_FIELD_IS_REQUIRED') }} @endif</p>
                                        @endif   
@@ -147,7 +147,7 @@
                                  <div class="">
                                     <div class="">
                                        <label class="control-label col-lg-2" for="text1">@if (Lang::has(Session::get('lang_file').'.STATE')!= '') {{  trans(Session::get('lang_file').'.STATE') }} @else {{ trans($OUR_LANGUAGE.'.STATE') }} @endif<span class="text-sub">*</span></label>
-                                       <input type="text" id="state" name="state" placeholder="@if (Lang::has(Session::get('lang_file').'.ENTER_YOUR_STATE')!= '') {{  trans(Session::get('lang_file').'.ENTER_YOUR_STATE') }} @else {{ trans($OUR_LANGUAGE.'.ENTER_YOUR_STATE') }} @endif"  class="form-control span"  maxlength="50"  value="{!! Input::old('state') !!}" required>
+                                       <input type="text" id="state" name="state" placeholder="@if (Lang::has(Session::get('lang_file').'.ENTER_YOUR_STATE')!= '') {{  trans(Session::get('lang_file').'.ENTER_YOUR_STATE') }} @else {{ trans($OUR_LANGUAGE.'.ENTER_YOUR_STATE') }} @endif"  class="form-control span"  maxlength="50"  value="{!! Input::old('state') !!}">
                                        @if ($errors->has('state')) 
                                        <p class="error-block" style="color:red;">{{ $errors->first('state') }}</p>
                                        @endif
@@ -197,7 +197,7 @@
                               <div class="span">
                                  <label class="control-label col-lg-2" for="text1">@if (Lang::has(Session::get('lang_file').'.ZIP_CODE')!= '') {{  trans(Session::get('lang_file').'.ZIP_CODE') }} @else {{ trans($OUR_LANGUAGE.'.ZIP_CODE') }} @endif<span class="text-sub">*</span></label>
                                  <div class="col-lg-8">
-                                    <input type="text" class="form-control span" placeholder="@if (Lang::has(Session::get('lang_file').'.ENTER_ZIP_CODE')!= '') {{  trans(Session::get('lang_file').'.ENTER_ZIP_CODE') }} @else {{ trans($OUR_LANGUAGE.'.ENTER_ZIP_CODE') }} @endif"  id="zipcode<?php //echo $z;?>" name="zipcode<?php //echo $z;?>" onkeypress="return isNumber(event)" maxlength="6" value="{!! Input::old('zipcode') !!}"  required>
+                                    <input type="text" class="form-control span" placeholder="@if (Lang::has(Session::get('lang_file').'.ENTER_ZIP_CODE')!= '') {{  trans(Session::get('lang_file').'.ENTER_ZIP_CODE') }} @else {{ trans($OUR_LANGUAGE.'.ENTER_ZIP_CODE') }} @endif"  id="zipcode<?php //echo $z;?>" name="zipcode<?php //echo $z;?>" onkeypress="return isNumber(event)" maxlength="6" value="{!! Input::old('zipcode') !!}" >
                                     @if ($errors->has('zipcode')) 
                                     <p class="error-block" style="color:red;">{{ $errors->first('zipcode') }}</p>
                                     @endif
@@ -206,7 +206,7 @@
                               <div class="span">
                                  <label class="control-label col-lg-2" for="text1">@if (Lang::has(Session::get('lang_file').'.EMAIL')!= '') {{  trans(Session::get('lang_file').'.EMAIL') }} @else {{ trans($OUR_LANGUAGE.'.EMAIL') }} @endif<span class="text-sub">*</span></label>
                                  <div class="col-lg-8">
-                                    <input type="email" class="form-control span" placeholder="@if (Lang::has(Session::get('lang_file').'.ENTER_YOUR_EMAIL_ID')!= '') {{  trans(Session::get('lang_file').'.ENTER_YOUR_EMAIL_ID') }} @else {{ trans($OUR_LANGUAGE.'.ENTER_YOUR_EMAIL_ID') }} @endif" id="email_id<?php //echo $z;?>" name="email<?php //echo $z;?>"  maxlength="50" value="{!! Input::old('email') !!}" required>
+                                    <input type="email" class="form-control span" placeholder="@if (Lang::has(Session::get('lang_file').'.ENTER_YOUR_EMAIL_ID')!= '') {{  trans(Session::get('lang_file').'.ENTER_YOUR_EMAIL_ID') }} @else {{ trans($OUR_LANGUAGE.'.ENTER_YOUR_EMAIL_ID') }} @endif" id="email_id<?php //echo $z;?>" name="email<?php //echo $z;?>"  maxlength="50" value="{!! Input::old('email') !!}">
                                     @if ($errors->has('email')) 
                                     <p class="error-block" style="color:red;">{{ $errors->first('email') }}</p>
                                     @endif
@@ -922,7 +922,7 @@
          
             $('#addr_line').val(ship_address1);
          
-            $('#addr1_line').val(ship_address2);
+            $('#state').val(ship_address2);
             
            select_city_ajax(ship_country,ship_city);
             //$('#city').val(select_city_ajax(ship_country,ship_city));

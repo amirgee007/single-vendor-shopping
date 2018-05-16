@@ -37,14 +37,9 @@ class Helper {
 	    if(\Auth::check()){
             $user =  \Auth::user();
 
-            if($user->role->name= "Retail") {
-               $price = $product->retail_sale_price;
-           }
-
-           else if($user->role->name= "Whole Sale"){
+            if($user->role->name= "Whole Sale") {
                $price = $product->wholesale_price;
            }
-
            else{
                $price = $product->pro_disprice;
            }

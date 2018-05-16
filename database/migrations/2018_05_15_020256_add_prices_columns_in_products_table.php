@@ -14,7 +14,6 @@ class AddPricesColumnsInProductsTable extends Migration
     public function up()
     {
         Schema::table('nm_product', function (Blueprint $table) {
-            $table->float('retail_sale_price')->after('product_brand_id');
             $table->float('wholesale_price')->after('product_brand_id');
             $table->integer('stock_quantity')->after('product_brand_id');
 
@@ -29,7 +28,6 @@ class AddPricesColumnsInProductsTable extends Migration
     public function down()
     {
         Schema::table('nm_product', function (Blueprint $table) {
-            $table->dropColumn('retail_sale_price');
             $table->dropColumn('wholesale_price');
             $table->dropColumn('stock_quantity');
         });
