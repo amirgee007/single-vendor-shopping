@@ -4183,7 +4183,7 @@ class HomeController extends Controller
             $cus_phone = Input::get('mobile');
             $pwd       = md5($cpwd);
             $city = Input::get('select_city');
-            $role_id = Input::get('select_role');
+//            $role_id = Input::get('select_role');
             $country = Input::get('select_country');
             
             $this->validate($request, 
@@ -4218,7 +4218,6 @@ class HomeController extends Controller
             $entry = array(
                 'cus_name' => Input::get('customername'),
                 'cus_email' => Input::get('email'),
-                'role_id' => $role_id,
                 'cus_pwd' => $pwd,
                 'cus_phone' => Input::get('mobile'),
                 'cus_country' => Input::get('select_country'),

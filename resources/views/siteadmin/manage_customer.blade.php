@@ -41,7 +41,7 @@
 			
            <!--<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">-->
 			<link href="{{ url('')}}/public/assets/css/jquery-ui.css" rel="stylesheet">
-			
+
          </head>
          <!-- END HEAD -->
          <!-- BEGIN BODY -->
@@ -133,6 +133,7 @@
                   {{ Form::button('Block',array('id'=>'Block_value','class'=>'btn btn-primary')) }}
                   {{ Form::button('Un Block',array('id'=>'UNBlock_value','class'=>'btn btn-warning')) }}
                   {{ Form::button('Delete',array('id'=>'Delete_value','class'=>'btn btn-warning')) }}
+                     <a type="button" class="btn btn-danger">Update Roles</a>
                   <!--  <input class="btn btn-primary" type="button" id="Block_value"  value="Block" />
                      <input class="btn btn-warning" type="button" id="UNBlock_value"  value="Un Block" />
                      <input class="btn btn-warning" type="button" id="Delete_value"  value="Delete" /> -->
@@ -154,7 +155,10 @@
                   <th aria-label="Hot deals: activate to sort column ascending" style="width: 65px;" colspan="1" rowspan="1" aria-controls="dataTables-example" tabindex="0" class="sorting">@if (Lang::has(Session::get('admin_lang_file').'.BACK_LOGIN_TYPE')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_LOGIN_TYPE') }} @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_LOGIN_TYPE') }} @endif</th>
                   </tr>
                   </thead>
+
                   <tbody>
+
+
                   @php $i = 1 ; @endphp
                   @if(isset($_POST['submit']))
                   @if(count($customerrep)>0)

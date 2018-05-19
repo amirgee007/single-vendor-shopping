@@ -166,6 +166,7 @@ class CustomerController extends Controller
             $to_date   = Input::get('to_date');
             
             $customerrep    = Customer::get_customerreports($from_date, $to_date);
+
 			if(Lang::has(Session::get('admin_lang_file').'.BACK_CUSTOMER')!= '') 
 			{ 
 				$session_message = trans(Session::get('admin_lang_file').'.BACK_CUSTOMER');
@@ -178,6 +179,7 @@ class CustomerController extends Controller
             $adminleftmenus = view('siteadmin.includes.admin_left_menu_customer');
             $adminfooter    = view('siteadmin.includes.admin_footer');
             $customerresult = Customer::get_customer_list();
+
             $citylist       = Customer::get_city_list();
             return view('siteadmin.manage_customer')->with('adminheader', $adminheader)->with('adminleftmenus', $adminleftmenus)->with('adminfooter', $adminfooter)->with('customerresult', $customerresult)->with('customerrep', $customerrep)->with('cityresult', $citylist)
             ->with('from_date',$from_date)->with('to_date',$to_date);

@@ -14,7 +14,7 @@ class AddRoleColumnInCustomersTable extends Migration
     public function up()
 {
     Schema::table('nm_customer', function (Blueprint $table) {
-        $table->integer('role_id')->after('cus_email');
+        $table->integer('role_id')->after('cus_email')->nullable();
 
     });
 }
