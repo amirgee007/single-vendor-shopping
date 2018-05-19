@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 use App\Role;
 use DB;
 use Session;
@@ -159,8 +160,9 @@ class CustomerController extends Controller
         
     }
 
-    public function manage_customer()
+    public function manage_customer(Request $request)
     {
+
         if (Session::has('userid')) {
             $from_date = Input::get('from_date');
             $to_date   = Input::get('to_date');
@@ -178,6 +180,7 @@ class CustomerController extends Controller
             $adminheader    = view('siteadmin.includes.admin_header')->with("routemenu", $session_message);
             $adminleftmenus = view('siteadmin.includes.admin_left_menu_customer');
             $adminfooter    = view('siteadmin.includes.admin_footer');
+
             $customerresult = Customer::get_customer_list();
 
             $citylist       = Customer::get_city_list();

@@ -133,7 +133,7 @@
                   {{ Form::button('Block',array('id'=>'Block_value','class'=>'btn btn-primary')) }}
                   {{ Form::button('Un Block',array('id'=>'UNBlock_value','class'=>'btn btn-warning')) }}
                   {{ Form::button('Delete',array('id'=>'Delete_value','class'=>'btn btn-warning')) }}
-                     <a type="button" class="btn btn-danger">Update Roles</a>
+                     {{--<a href="manage_customer?filter=role-base" type="button" class="btn btn-danger">Update Roles</a>--}}
                   <!--  <input class="btn btn-primary" type="button" id="Block_value"  value="Block" />
                      <input class="btn btn-warning" type="button" id="UNBlock_value"  value="Un Block" />
                      <input class="btn btn-warning" type="button" id="Delete_value"  value="Delete" /> -->
@@ -147,6 +147,7 @@
                   <th aria-label="S.No: activate to sort column ascending" style="width: 61px;" colspan="1" rowspan="1" aria-controls="dataTables-example" tabindex="0" class="sorting_asc" aria-sort="ascending">S.No</th>
                   <th aria-label="Product Name: activate to sort column ascending" style="width: 69px;" colspan="1" rowspan="1" aria-controls="dataTables-example" tabindex="0" class="sorting">@if (Lang::has(Session::get('admin_lang_file').'.BACK_NAME')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_NAME') }} @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_NAME') }} @endif</th>
                   <th aria-label="City: activate to sort column ascending" style="width: 81px;" colspan="1" rowspan="1" aria-controls="dataTables-example" tabindex="0" class="sorting">@if (Lang::has(Session::get('admin_lang_file').'.BACK_EMAIL')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_EMAIL') }} @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_EMAIL') }} @endif</th>
+                  <th aria-label="Role: activate to sort column ascending" colspan="1" rowspan="1" aria-controls="dataTables-example" tabindex="0" class="sorting">@if (Lang::has(Session::get('admin_lang_file').'.ROLE')!= '') {{  trans(Session::get('admin_lang_file').'.ROLE') }} @else {{ trans($ADMIN_OUR_LANGUAGE.'.ROLE') }} @endif</th>
                   <th aria-label="Store Name: activate to sort column ascending" style="width: 78px;" colspan="1" rowspan="1" aria-controls="dataTables-example" tabindex="0" class="sorting">@if (Lang::has(Session::get('admin_lang_file').'.BACK_CITY')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_CITY') }} @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_CITY') }} @endif</th>
                   <th aria-label="Original Price($): activate to sort column ascending" style="width: 75px;" colspan="1" rowspan="1" aria-controls="dataTables-example" tabindex="0" class="sorting">@if (Lang::has(Session::get('admin_lang_file').'.BACK_JOINED_DATE')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_JOINED_DATE') }} @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_JOINED_DATE') }} @endif</th>
                   <th aria-label=" Product Image : activate to sort column ascending" style="width: 78px;" colspan="1" rowspan="1" aria-controls="dataTables-example" tabindex="0" class="sorting">@if (Lang::has(Session::get('admin_lang_file').'.BACK_EDIT')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_EDIT') }} @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_EDIT') }} @endif</th>
@@ -212,6 +213,7 @@
                   <td class="sorting_1">{{ $i }}</td>
                   <td class="  ">{{  $customerdetails->cus_name }}</td>
                   <td class="  ">{{  $customerdetails->cus_email }}</td>
+                  <td class="  ">{{  $customerdetails->name }}</td>
                   <td class="center  ">{{  $customerdetails->ci_name }}</td>
                   <td class="center  ">{{ $customerdetails->cus_joindate }}</td>
                   <td class="center">  <a href="{{ url('edit_customer/'.$customerdetails->cus_id) }}" data-tooltip="@if (Lang::has(Session::get('admin_lang_file').'.BACK_EDIT')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_EDIT') }} @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_EDIT') }} @endif"> <i class="icon icon-edit icon-2x" style="margin-left:15px;"></i></a></td>

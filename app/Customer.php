@@ -108,8 +108,9 @@ class Customer extends Model
 
     public static function get_customer_list()
     {
-        return DB::table('nm_customer')->Leftjoin('nm_city', 'nm_customer.cus_city', '=', 'nm_city.ci_id')->where('cus_status','!=',2)->orderBy('nm_customer.cus_joindate', 'desc')->get();
+        return DB::table('nm_customer')->Leftjoin('nm_city', 'nm_customer.cus_city', '=', 'nm_city.ci_id')->Leftjoin('roles', 'nm_customer.role_id', '=', 'roles.role_id')->where('cus_status','!=',2)->orderBy('nm_customer.cus_joindate', 'desc')->get();
     }
+
 
     public static function get_customer($id)
     {
