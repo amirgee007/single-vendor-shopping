@@ -31,28 +31,18 @@ class Helper {
 		echo $lang_name = 'French'; 
 	}
 
-    public static function get_role_price($pro_id){
-        $product = \App\Products::where('pro_id' ,$pro_id)->first();
+    public static function get_role_price($product){
 
+        $price = $product->pro_disprice;
 	    if(\Auth::check()){
             $user =  \Auth::user();
-
-            if($user->role->name= "Whole Sale") {
+            if($user->role_id= 1) {
                $price = $product->wholesale_price;
            }
-           else{
-               $price = $product->pro_disprice;
-           }
-        }
-
-        else{
-            $price = $product->pro_disprice;
         }
 
         return $price;
-
     }
-
 }
 
 ?>

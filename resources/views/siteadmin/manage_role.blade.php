@@ -151,7 +151,8 @@
                                     <td class="center">
                                         <a href="{{ url('edit_role/'.$row->role_id) }}" data-tooltip="Edit" > <i class="icon icon-edit icon-2x" style="margin-left:15px;"></i></a></td>
                                     <td>
-                                        <a href="{{ url('delete_role/'.$row->role_id) }}" onclick="return confirm('Do you want to delete the record?')" data-tooltip="Delete"> <i class="icon icon-trash icon-2x" style="margin-left:15px;"></i></a>
+{{--                                        <a disabled="true" href="{{ url('delete_role/'.$row->role_id) }}" onclick="return confirm('Do you want to delete the record?')" data-tooltip="Delete"> <i class="icon icon-trash icon-2x" style="margin-left:15px;"></i></a>--}}
+                                        <a disabled="true" href="#" onclick="return confirm('Do you want to delete the record?')" data-tooltip="Delete"> <i class="icon icon-trash icon-2x" style="margin-left:15px;"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
