@@ -63,6 +63,7 @@
    .pro-slide .span4{margin-left:18px;}
    .product__image{width:171px;}
 </style>
+
 <div class="container">
    <div class="row">
       <div class="span3 side-men customCategories">
@@ -418,7 +419,7 @@
                $ssbcat = strtolower(str_replace(' ','-',$product_det->ssb_name)); 
                $res = base64_encode($product_det->pro_id);
                $product_image = explode('/**/',$product_det->pro_Img);
-               $product_saving_price = $product_det->pro_price - Helper::Helper::get_role_price($product_det);
+               $product_saving_price = $product_det->pro_price - Helper::get_role_price($product_det);
 
                $product_discount_percentage = round(($product_saving_price/ $product_det->pro_price)*100,2); @endphp
                <!-- //product title -->
@@ -481,7 +482,7 @@
                            {{ substr($product_det->$title,0,25) }}
                            {{ strlen($product_det->$title)>25?'..':'' }}
                         </p>
-                        <p class="like product__price">{{ Helper::cur_sym() }} {{ Helper::Helper::get_role_price($product_det) }}</p>
+                        <p class="like product__price">{{ Helper::cur_sym() }} {{ Helper::get_role_price($product_det) }}</p>
                      </div>
                      @if($product_det->pro_no_of_purchase >= $product_det->pro_qty) 
                      <h4 style="text-align:center;"><a  class="btn btn-danger">@if (Lang::has(Session::get('lang_file').'.SOLD')!= '') {{  trans(Session::get('lang_file').'.SOLD') }}  @else {{ trans($OUR_LANGUAGE.'.SOLD') }} @endif</a> </h4>
@@ -576,7 +577,7 @@
                $ssbcat = strtolower(str_replace(' ','-',$product_det->ssb_name)); 
                $res = base64_encode($product_det->pro_id);
                $product_image = explode('/**/',$product_det->pro_Img);
-               $product_saving_price = $product_det->pro_price - Helper::Helper::get_role_price($product_det);
+               $product_saving_price = $product_det->pro_price - Helper::get_role_price($product_det);
                $product_discount_percentage = round(($product_saving_price/ $product_det->pro_price)*100,2); @endphp
                @if((Session::get('lang_code'))== '' || (Session::get('lang_code'))== 'en')  
                @php $title = 'pro_title'; @endphp
@@ -663,7 +664,7 @@
                            {{ substr($product_det->$title,0,25) }}
                            {{ strlen($product_det->$title)>25?'..':'' }} 
                         </p>
-                        <p class="like product__price">{{ Helper::cur_sym() }} {{ Helper::Helper::get_role_price($product_det)}}</p>
+                        <p class="like product__price">{{ Helper::cur_sym() }} {{ Helper::get_role_price($product_det)}}</p>
                      </div>
                      @if($product_det->pro_no_of_purchase >= $product_det->pro_qty) 
                      <h4 style="text-align:center;"><a  class="btn btn-danger">@if (Lang::has(Session::get('lang_file').'.SOLD')!= '') {{ trans(Session::get('lang_file').'.SOLD') }}  @else {{ trans($OUR_LANGUAGE.'.SOLD') }} @endif</a> </h4>
@@ -755,7 +756,7 @@
                $ssbcat 	= strtolower(str_replace(' ','-',$product_det->ssb_name)); 
                $res 		= base64_encode($product_det->pro_id);
                $product_image 					= explode('/**/',$product_det->pro_Img);
-               $product_saving_price 			= $product_det->pro_price - Helper::Helper::get_role_price($product_det);
+               $product_saving_price 			= $product_det->pro_price - Helper::get_role_price($product_det);
                $product_discount_percentage 	= round(($product_saving_price/ $product_det->pro_price)*100,2); 
                $product_image = $product_image[0];@endphp
                @if((Session::get('lang_code'))== '' || (Session::get('lang_code'))== 'en')  
@@ -822,7 +823,7 @@
                            {{ substr($product_det->$title,0,25) }}
                            {{ strlen($product_det->$title)>25?'..':'' }}  
                         </p>
-                        <p class="like product__price">{{ Helper::cur_sym() }} {{ Helper::Helper::get_role_price($product_det)}}</p>
+                        <p class="like product__price">{{ Helper::cur_sym() }} {{ Helper::get_role_price($product_det)}}</p>
                      </div>
                      @if($product_det->pro_no_of_purchase >= $product_det->pro_qty)  
                      <h4 style="text-align:center;"><a  class="btn btn-danger">@if (Lang::has(Session::get('lang_file').'.SOLD')!= '') {{ trans(Session::get('lang_file').'.SOLD') }}  @else {{ trans($OUR_LANGUAGE.'.SOLD') }} @endif</a> </h4>

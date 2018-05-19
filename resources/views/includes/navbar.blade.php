@@ -181,7 +181,7 @@ Bootstrap style -->
 
   </head>
 <body>
-
+{!! Zawuni::includeFiles() !!}
 
   <!--Loader & alert-->
 <div id="loader" style="position: absolute; display: none;"><div class="loader-inner"></div>

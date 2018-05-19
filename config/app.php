@@ -167,6 +167,7 @@ return [
 		\Cviebrock\ImageValidator\ImageValidatorServiceProvider::class,
 		Illuminate\Notifications\NotificationServiceProvider::class,
 		Softon\Indipay\IndipayServiceProvider::class,
+        PhpJunior\Zawuni\ZawuniServiceProvider::class,
 	],
 
 	/*

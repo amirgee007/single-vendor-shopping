@@ -59,7 +59,6 @@ class HomeController extends Controller
 
     public function index(){
 
-
         $email_login='';
        /* error_reporting(E_ALL);  
         ini_set('display_errors',1); 
