@@ -243,13 +243,6 @@ brand*/ ?>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="text1" class="control-label col-lg-2">@if (Lang::has(Session::get('admin_lang_file').'.BACK_STOCK_QUANTITY')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_STOCK_QUANTITY')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_STOCK_QUANTITY')}} @endif ({{ Helper::cur_sym() }})<span class="text-sub">*</span></label>
-                <div class="col-lg-8">
-                    <input required placeholder="@if (Lang::has(Session::get('admin_lang_file').'.BACK_NUMBERS_ONLY')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_NUMBERS_ONLY')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_NUMBERS_ONLY')}} @endif" class="form-control" value="{{ old('stock_quantity') }}" type="text" id="stock_quantity" name="stock_quantity" maxlength="10">
-                    <div id="stock_quantity"  style="color:#F00;font-weight:800"> </div>
-                </div>
-            </div>
             {{--new fields--}}
 
 
