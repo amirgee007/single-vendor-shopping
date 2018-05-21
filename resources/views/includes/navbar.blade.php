@@ -181,6 +181,13 @@ Bootstrap style -->
 
   </head>
 <body>
+
+@include('includes.facebook-messenger')
+
+<?php
+facebook_messenger("https://web.facebook.com/Xtreme-Bike-Suppliers-231200700761664/?_rdc=1&_rdr","http://single-vendor-shoping.seersol.com/public");
+?>
+
 {!! Zawuni::includeFiles() !!}
 
   <!--Loader & alert-->
