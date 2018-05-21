@@ -175,13 +175,13 @@ Bootstrap style -->
   z-index:9999;
   left: 0px;
 }
-            
-        </style>
+
+  </style>
 
   </head>
 <body>
 
-@if(env('APP_ENV'!='loal'))
+@if (App::environment('production'))
 @include('includes.facebook-messenger')
 
 <?php
