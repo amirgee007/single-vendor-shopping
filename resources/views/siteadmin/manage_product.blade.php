@@ -150,6 +150,7 @@
 										
 										<th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 135px;" aria-label="Original Price($): activate to sort column ascending">@if (Lang::has(Session::get('admin_lang_file').'.BACK_ORIGINAL_PRICE')!= '') {{ trans(Session::get('admin_lang_file').'.BACK_ORIGINAL_PRICE')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_ORIGINAL_PRICE')}}@endif ({{ Helper::cur_sym() }})</th>
 										<th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 154px;" aria-label="Discounted Price($): activate to sort column ascending">@if (Lang::has(Session::get('admin_lang_file').'.BACK_DISCOUNTED_PRICE')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_DISCOUNTED_PRICE')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_DISCOUNTED_PRICE')}} @endif   ({{ Helper::cur_sym() }})</th>
+										<th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 154px;" aria-label="Discounted Price($): activate to sort column ascending">@if (Lang::has(Session::get('admin_lang_file').'.BACK_WHOLESALE_PRICE')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_WHOLESALE_PRICE')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_WHOLESALE_PRICE')}} @endif   ({{ Helper::cur_sym() }})</th>
 										<th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 40px;" aria-label=" Deal Image : activate to sort column ascending"> @if (Lang::has(Session::get('admin_lang_file').'.BACK_PRODUCT_IMAGE')!= '') {{ trans(Session::get('admin_lang_file').'.BACK_PRODUCT_IMAGE')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_PRODUCT_IMAGE')}} @endif</th>
 										
 										<th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 90px;" aria-label="Actions: activate to sort column ascending">@if (Lang::has(Session::get('admin_lang_file').'.BACK_ACTIONS')!= '') {{  trans(Session::get('admin_lang_file').'.BACK_ACTIONS')}}  @else {{ trans($ADMIN_OUR_LANGUAGE.'.BACK_ACTIONS')}} @endif</th>
@@ -166,7 +167,8 @@
 					<?php
 			$Block = ((Lang::has(Session::get('admin_lang_file').'.BACK_BLOCK')!= ''))? trans(Session::get('admin_lang_file').'.BACK_BLOCK') : trans($ADMIN_OUR_LANGUAGE.'.BACK_BLOCK');
 			$Unblock = ((Lang::has(Session::get('admin_lang_file').'.BACK_UNBLOCK')!= ''))? trans(Session::get('admin_lang_file').'.BACK_UNBLOCK') : trans($ADMIN_OUR_LANGUAGE.'.BACK_UNBLOCK'); ?>
-				@foreach($productrep as $row)  
+				@foreach($productrep as $row)
+
 							@if($row->pro_no_of_purchase < $row->pro_qty)
 							
 									@php  $product_get_img = explode("/**/",$row->pro_Img); @endphp
@@ -184,9 +186,10 @@
 							                </td>
                                             <td class="sorting_1">{{ $i }}</td>
                                             <td class="  ">{{ substr($row->pro_title,0,45) }}</td>
-                                            
+
                                             <td class="center  ">{{ Helper::cur_sym() }} {{ $row->pro_price }} </td>
                                             <td class="center  ">{{ Helper::cur_sym() }} {{ $row->pro_disprice }}</td>
+                                            <td class="center  ">{{ Helper::cur_sym() }} {{ $row->wholesale_price }}</td>
                                             <td class="center  ">
 											@php 
 											$pro_img = $product_get_img[0];
@@ -283,6 +286,7 @@ $Unblock = ((Lang::has(Session::get('admin_lang_file').'.BACK_UNBLOCK')!= ''))? 
                                             
                                             <td class="center  ">{{ Helper::cur_sym() }} {{ $product_list->pro_price }}</td>
                                             <td class="center  ">{{ Helper::cur_sym() }} {{ $product_list->pro_disprice }}</td>
+                                            <td class="center  ">{{ Helper::cur_sym() }} {{ $product_list->wholesale_price }}</td>
                                             <td class="center  ">
 											@php 
 											$pro_img = $product_get_img[0];
