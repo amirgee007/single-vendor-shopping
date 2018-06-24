@@ -657,7 +657,8 @@ display:none;
                   </div>
                     <div class="Priec-right">
                      <p class="old-price"> <strike>{{ Helper::cur_sym() }} {{ $pro_details_by_id->pro_price }}</strike></p>
-                     <p class="new-price">{{ Helper::cur_sym() }} {{ $pro_details_by_id->pro_disprice }} 
+                     <p class="new-price">{{ Helper::cur_sym() }} {{Helper::get_role_price($pro_details_by_id)}}
+
 					@if($pro_details_by_id->pro_discount_percentage!='') 
 					 <span class="offer">(<?php echo round($pro_details_by_id->pro_discount_percentage);?>% off)</span>
 					 @endif
